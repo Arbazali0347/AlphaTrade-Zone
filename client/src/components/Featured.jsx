@@ -10,7 +10,7 @@ const StudentShowcase = () => {
       id: 1,
       title: "Trade Alpha Zone",
       tag: "Trading Community",
-      focus: ["Shah Faisal Campus — Trade Alpha Zone", "Model Colony Campus — Linguaphile Academia", "Saudabad Collaboration — Skill Box Institute"],
+      focus: ["Model Colony Campus — Linguaphile Academia", "Saudabad Campus — Skill Box Institute"],
       video: video1,
       description: "Learn From Experienced Mentors & Grow With A Professional Trading Environment."
     },
@@ -20,7 +20,7 @@ const StudentShowcase = () => {
       tag: "PHYSICAL TRAINING",
       focus: ["Team Collaboration", "Mental Discipline", "1-on-1 Coaching"],
       video: video2,
-      description: "Step into the world of professional forex trading with expert mentorship, live market learning, and a powerful trading community."
+      description: "Step into the world of professional trading with expert mentorship, live market learning, and a powerful trading community."
     }
   ];
 
@@ -43,8 +43,8 @@ const StudentShowcase = () => {
              <div className="h-[2px] w-12 bg-blue-600"></div>
              <span className="text-blue-500 font-bold tracking-[0.4em] text-[10px] uppercase">Academy Insight</span>
           </div>
-          <h2 className="text-5xl md:text-8xl font-black text-white leading-[0.8] tracking-tighter uppercase italic">
-            LEARNING IN <br />
+          <h2 className="text-5xl whitespace-pre md:text-8xl font-black text-white leading-[0.8] tracking-tighter uppercase italic">
+            LEARNING  IN <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-200">REAL-TIME.</span>
           </h2>
         </motion.div>

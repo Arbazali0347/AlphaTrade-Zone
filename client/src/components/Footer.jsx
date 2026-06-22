@@ -47,33 +47,49 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* COLUMN 3: CONNECT & SOCIAL HUB (4 Cols) */}
+          {/* COLUMN 3: CONNECT & SOCIAL HUB WITH LIVE CHANNELS (4 Cols) */}
           <div className="md:col-span-4 space-y-4">
             <div>
               <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest block mb-2">Connect Hub</span>
               
-              {/* BRAND COLOR HOVER ICONS */}
+              {/* UPDATED REAL LINKS HUB */}
               <div className="flex items-center gap-3">
+                {/* 1. WhatsApp Community Channel Link */}
                 <a 
-                  href="https://whatsapp.com" target="_blank" rel="noreferrer"
+                  href="https://api.whatsapp.com/send/?phone=03152939539&text&type=phone_number&app_absent=0" 
+                  // href="https://whatsapp.com/channel/0029VbB5SJqEQIaw67hnr83L" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-xl bg-[#070f2e]/60 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-[#25D366] hover:border-[#25D366]/40 hover:bg-[#25D366]/5 transition-all shadow-md"
                 >
                   <FaWhatsapp size={16} />
                 </a>
+
+                {/* 2. YouTube Official Profile Link */}
                 <a 
-                  href="https://youtube.com" target="_blank" rel="noreferrer"
+                  href="https://www.youtube.com/@tradealphazone" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-xl bg-[#070f2e]/60 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-[#FF0000] hover:border-[#FF0000]/40 hover:bg-[#FF0000]/5 transition-all shadow-md"
                 >
                   <FaYoutube size={16} />
                 </a>
+
+                {/* 3. Facebook Business Page Link */}
                 <a 
-                  href="https://facebook.com" target="_blank" rel="noreferrer"
+                  href="https://www.facebook.com/p/Trade-Alpha-Zone-100068397378000/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-xl bg-[#070f2e]/60 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-[#1877F2] hover:border-[#1877F2]/40 hover:bg-[#1877F2]/5 transition-all shadow-md"
                 >
                   <FaFacebookF size={14} />
                 </a>
+
+                {/* 4. Instagram Handles Link */}
                 <a 
-                  href="https://instagram.com" target="_blank" rel="noreferrer"
+                  href="https://www.instagram.com/trade_alpha_zone/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-xl bg-[#070f2e]/60 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-[#E4405F] hover:border-[#E4405F]/40 hover:bg-[#E4405F]/5 transition-all shadow-md"
                 >
                   <FaInstagram size={16} />
@@ -81,12 +97,14 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* DEV CREDIT BAR (Perfect Integration) */}
+            {/* DEV CREDIT BAR */}
             <div className="pt-2 border-t border-white/5 flex items-center justify-between gap-4">
               <div>
                 <span className="text-[7px] font-bold text-zinc-500 uppercase tracking-widest block">Engineered By</span>
                 <a 
-                  href="https://arbaz-aro.vercel.app" target="_blank" rel="noopener noreferrer"
+                  href="https://arbaz-aro.vercel.app" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-zinc-300 hover:text-blue-400 font-black uppercase tracking-wider text-[11px] mt-0.5 transition-colors"
                 >
                   Arbaz Ali <ExternalLink size={10} className="text-blue-500" />

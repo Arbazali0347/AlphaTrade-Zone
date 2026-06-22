@@ -1,38 +1,29 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Navigation, Clock, Phone, Building2 } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa'; // Premium High-Res Brand Icon
 
 const LocationPreview = () => {
   // Teeno actual campuses ka state-driven data updated with client details
   const campuses = [
     {
-      id: "shah-faisal",
-      title: "SHAH FAISAL CAMPUS",
-      subtitle: "Trade Alpha Zone Head Office",
-      address: "S.R ACADEMY (SHAH FAISAL CAMPUS)",
-      city: "Karachi, Pakistan",
-      timing: "12:00 PM - 09:00 PM",
-      phone: "+92 335 1398283",
-      mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.42292456852!2d67.15251409999999!3d24.883551699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb3392be2b586cf%3A0xc76e3e8ce37ffe8e!2sS.R%20ACADEMY%20(SHAH%20FAISAL%20CAMPUS)!5e0!3m2!1sen!2s!4v1779273652382!5m2!1sen!2s"
-    },
-    {
       id: "model-colony",
-      title: "COGITO CAMPUS",
-      subtitle: "Linguaphile Academia Collaboration",
+      title: "MODEL COLONY CAMPUS",
+      subtitle: "Linguaphile Academia",
       address: "Liaquat Ali Khan Rd, Model Colony Block 10 Model Colony",
       city: "Karachi, 75080, Pakistan",
-      timing: "02:00 PM - 10:00 PM",
-      phone: "+92 335 1398283",
+      timing: "04:00 PM - 11:00 PM",
+      phone: "+92 315 570 3306",
       mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.8949282249905!2d67.1931316!3d24.9015654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb3376104bf53e3%3A0xbab61c641f9cfcee!2sLinguaphile%20Academia!5e0!3m2!1sen!2s!4v1779273782800!5m2!1sen!2s"
     },
     {
       id: "saudabad",
-      title: "SKILLBOX CENTER",
-      subtitle: "Skill Box Institute Premises",
+      title: "SAUDABAD CAMPUS",
+      subtitle: "Skill Box Institute",
       address: "W622+HF8, Indus Mehran",
       city: "Karachi, 75080, Pakistan",
-      timing: "03:00 PM - 11:00 PM",
-      phone: "+92 335 1398283",
+      timing: "04:00 PM - 11:00 PM",
+      phone: "+92 315 570 3306",
       mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.8992471596307!2d67.2012037!3d24.901418099999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33737ff54109d%3A0x21738722b899efb5!2sSkillBox!5e0!3m2!1sen!2s!4v1779273864635!5m2!1sen!2s"
     }
   ];
@@ -42,6 +33,12 @@ const LocationPreview = () => {
   // Function to open the active map link in a new tab
   const handleOpenMap = () => {
     window.open(activeCampus.mapSrc, '_blank', 'noopener,noreferrer');
+  };
+
+  // WhatsApp Trigger Action (Cleans special chars automatically)
+  const handleWhatsAppRedirect = (phoneNumber) => {
+    const cleanNumber = phoneNumber.replace(/[^\d+]/g, ''); 
+    window.open(`https://wa.me/${cleanNumber}`, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -116,16 +113,26 @@ const LocationPreview = () => {
                     <span className="text-zinc-400 font-medium">{activeCampus.city}</span>
                   </p>
                 </div>
+
+                {/* Timings Dynamic Info Node */}
+                <div className="space-y-2">
+                  <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest flex items-center gap-1.5">
+                    <Clock size={10} className="text-cyan-400" /> Operational Hours
+                  </p>
+                  <p className="text-white text-sm font-black tracking-tight uppercase">
+                    {activeCampus.timing}
+                  </p>
+                </div>
               </motion.div>
             </AnimatePresence>
 
           </div>
 
-          {/* RIGHT SIDE: Map Container Frame (Optimized Height & Sizing) */}
+          {/* RIGHT SIDE: Map Container Frame */}
           <div className="lg:col-span-6 w-full relative">
             <div className="absolute -inset-4 bg-blue-600/5 blur-3xl rounded-[3rem] pointer-events-none"></div>
 
-            {/* FIXED ASPECT RATIO: Changed aspect-square to aspect-[4/3] on mobile and aspect-video on large screens */}
+            {/* FIXED ASPECT RATIO MAP GRID CONTAINER */}
             <div className="relative rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl aspect-[4/3] md:aspect-video bg-slate-950">
               <AnimatePresence mode="wait">
                 <motion.iframe
@@ -143,18 +150,33 @@ const LocationPreview = () => {
                 ></motion.iframe>
               </AnimatePresence>
 
-              {/* Glassmorphism Dynamic Footer Label Overlay */}
-              <div className="absolute bottom-4 left-4 right-4 bg-black/75 backdrop-blur-xl border border-white/5 p-4 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-3">
+              {/* Glassmorphism Dynamic Footer Label Overlay with Premium Premium Call-to-Actions */}
+              <div className="absolute bottom-4 left-4 right-4 bg-black/85 backdrop-blur-xl border border-white/5 p-4 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-3">
+                
+                {/* Desk Connection & WhatsApp Trigger Group */}
                 <div className="flex items-center gap-3 w-full sm:w-auto">
-                  <div className="w-8 h-8 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0">
-                    <Phone size={14} />
-                  </div>
+                  
+                  {/* Premium Glowing Interactive WhatsApp Action Badge */}
+                  <motion.div 
+                    whileHover={{ scale: 1.04 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => handleWhatsAppRedirect(activeCampus.phone)} 
+                    className="h-10 px-4 font-black tracking-widest text-[10px] uppercase cursor-pointer rounded-xl bg-emerald-500/10 border border-emerald-500/30 hover:border-emerald-400 hover:bg-emerald-500/20 flex items-center justify-center gap-2 text-emerald-400 transition-all duration-300 shadow-lg shadow-emerald-950/40"
+                  >
+                    <FaWhatsapp size={14} className="filter drop-shadow-[0_0_4px_rgba(16,185,129,0.5)] animate-pulse" />
+                    <span>WhatsApp</span>
+                  </motion.div>
+
+                  <div className="h-8 w-[1px] bg-white/5 mx-1"></div>
+
                   <div>
                     <p className="text-[8px] font-bold text-zinc-500 uppercase tracking-widest leading-none mb-1">Campus Desk</p>
                     <p className="text-white font-bold tracking-tight text-xs leading-none">{activeCampus.phone}</p>
                   </div>
                 </div>
+
                 <div className="h-6 w-[1px] bg-white/10 hidden sm:block"></div>
+                
                 <p className="text-[9px] font-bold text-zinc-400 uppercase tracking-widest text-center sm:text-right w-full sm:w-auto leading-tight">
                   Trading Hall & <br />Learning Desk Open
                 </p>

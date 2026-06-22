@@ -5,11 +5,13 @@ import LocationPreview from '../components/LocationPreview'
 import Services from '../components/WhyChooseUs'
 import YoutubeHub from '../components/YoutubeHub'
 import UpcomingTestVault from '../components/UpcomingTestVault'
+import CourseCadetFeature from '../components/CourseCadetFeature'
 
 const Home = () => {
   return (
     <div>
         <Hero/>
+        <CourseCadetFeature/>
         <SignatureShowcase/>
         <YoutubeHub/>
         <Services/>

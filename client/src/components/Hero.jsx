@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Activity, Zap, Users } from 'lucide-react';
 import tazLogo from "/logo.png";
+import { useNavigate } from 'react-router-dom';
 
 const NewHero = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative min-h-screen bg-[#010413] flex items-center overflow-hidden px-6">
 
@@ -45,8 +47,8 @@ const NewHero = () => {
 
           {/* Main Heading with Gradient Mask */}
           <div className="space-y-2">
-            <h1 className="text-6xl md:text-[85px] font-black text-white leading-[0.85] tracking-tighter uppercase">
-              TRADE ALPHA <br />
+            <h1 className="whitespace-pre text-6xl md:text-[85px] font-black text-white leading-[0.85] tracking-tighter uppercase">
+              TRADE  ALPHA <br />
               <span className="relative">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-600 animate-gradient-x">
                   ZONE.
@@ -70,6 +72,7 @@ const NewHero = () => {
           {/* Premium CTA Group */}
           <div className="flex flex-wrap gap-5">
             <motion.button
+              onClick={() => navigate("/contact")}
               whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(37, 99, 235, 0.4)" }}
               whileTap={{ scale: 0.98 }}
               className="group flex items-center justify-center gap-3 bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-[11px] tracking-[0.2em] uppercase transition-all"
@@ -78,10 +81,11 @@ const NewHero = () => {
             </motion.button>
 
             <motion.button
+              onClick={() => navigate("/academy")}
               whileHover={{ backgroundColor: "rgba(255,255,255,0.05)" }}
               className="flex items-center justify-center gap-2 border border-white/10 text-white px-10 py-5 rounded-2xl font-black text-[11px] tracking-[0.2em] uppercase transition-all"
             >
-              Explore SMC
+              Explore Our Story <Users size={18} className="text-white/70" />
             </motion.button>
           </div>
 
@@ -134,7 +138,7 @@ const NewHero = () => {
       {/* Background Big Text */}
       <div className="absolute left-[-2%] top-[10%] hidden xl:block pointer-events-none rotate-90 origin-left">
         <h2 className="text-[10rem] font-black text-white/[0.02] tracking-tighter uppercase">
-          FOREX ACADEMY
+          TRADING ACADEMY
         </h2>
       </div>
 

@@ -13,24 +13,16 @@ import {
 
 const ContactPage = () => {
   const contactInfo = {
-    phone: "+92 335 1398283",
-    email: "support@tradealphazone.com",
+    phone: "+92 315 2939539",
+    email: "contact@tradealphazone.com",
     instagram: "@trade_alpha_zone",
     website: "www.tradealphazone.com"
   };
 
   const campuses = [
     {
-      id: "shah-faisal",
-      name: "SHAH FAISAL CAMPUS",
-      type: "Headquarters & Trading Floor",
-      address: "S.R ACADEMY (SHAH FAISAL CAMPUS)",
-      city: "Karachi, Pakistan",
-      embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.42292456852!2d67.15251409999999!3d24.883551699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb3392be2b586cf%3A0xc76e3e8ce37ffe8e!2sS.R%20ACADEMY%20(SHAH%20FAISAL%20CAMPUS)!5e0!3m2!1sen!2s!4v1779273652382!5m2!1sen!2s",
-    },
-    {
       id: "model-colony",
-      name: "COGITO CAMPUS",
+      name: "MODEL COLONY CAMPUS",
       type: "Linguaphile Academia Desk",
       address: "Liaquat Ali Khan Rd, Model Colony Block 10 Model Colony",
       city: "Karachi, 75080, Pakistan",
@@ -39,7 +31,7 @@ const ContactPage = () => {
     },
     {
       id: "saudabad",
-      name: "SKILLBOX",
+      name: "SAUDABAD CAMPUS",
       type: "Skill Box Institute Premises",
       address: "W622+HF8, Indus Mehran",
       city: "Karachi, 75080, Pakistan",
@@ -67,7 +59,7 @@ const ContactPage = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-300">THE DESK.</span>
           </h1>
           <p className="text-zinc-400 text-xs sm:text-sm md:text-base font-medium max-w-xl mx-auto pt-2 px-2">
-            Visit our physical trading floors or reach out directly through official institutional channels.
+            Visit our On-Premise trading floors or reach out directly through official institutional channels.
           </p>
         </div>
 

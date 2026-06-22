@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCheckCircle, FaHourglassHalf, FaTrophy, FaChevronRight } from 'react-icons/fa';
 import image_1 from "../assets/past-fetival-1.jpeg";
-import image_2 from "../assets/past-fetival-4.jpeg";
+import image_2 from "../assets/team.jpg";
 import { useNavigate } from 'react-router-dom';
 const UpcomingTestVault = () => {
   const navigate = useNavigate();
@@ -85,8 +85,8 @@ const UpcomingTestVault = () => {
             {/* Structured Text & Status Side Panel */}
             <div className="w-full sm:w-[45%] p-4 flex flex-col justify-between items-start space-y-6 bg-gradient-to-br from-transparent to-[#02081c]">
               <div className="w-full flex items-center justify-between">
-                <span className="bg-blue-600 text-white text-[8px] font-black uppercase tracking-widest px-2 py-0.5 rounded shadow-sm animate-pulse">
-                  Upcoming Node
+                <span className="bg-blue-600 text-white text-[8px] font-black uppercase tracking-widest px-2 py-0.5 rounded shadow-sm ">
+                  achieved Node
                 </span>
                 <span className="text-blue-400 font-black text-xs">2026</span>
               </div>

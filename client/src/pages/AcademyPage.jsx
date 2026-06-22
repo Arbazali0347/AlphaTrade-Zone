@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Monitor, Users, GraduationCap, ArrowUpRight, BarChart3 } from 'lucide-react';
+import { ShieldCheck, Monitor, Users, GraduationCap, ArrowUpRight, BarChart3, Clock, MessageSquare } from 'lucide-react';
 
 const AcademyPage = () => {
   const stats = [
@@ -36,7 +36,7 @@ const AcademyPage = () => {
       <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-cyan-500/5 blur-[150px] rounded-full pointer-events-none"></div>
 
       {/* --- HERO / LOGO HEADER SECTION --- */}
-      <section className="relative pt-32 pb-20 px-6 max-w-7xl mx-auto border-b border-white/5">
+      <section className="relative pt-32 pb-16 px-6 max-w-7xl mx-auto">
         <div className="flex flex-col items-center text-center space-y-8">
           
           {/* Logo Integration */}
@@ -69,6 +69,57 @@ const AcademyPage = () => {
               Trade Alpha Zone is not a casual coaching center. We operate structured physical ecosystems in Pakistan built to transform raw talent into disciplined market executors.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* --- STUDENT FEEDBACK VIDEO SPLIT SECTION (NOW 100% ENGLISH) --- */}
+      <section className="py-12 px-6 max-w-7xl mx-auto border-y border-white/5 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+          
+          {/* LEFT SIDE: YouTube Embed Container */}
+          <div className="lg:col-span-5 w-full flex justify-center">
+            <div className="w-full max-w-[340px] aspect-[9/16] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(37,99,235,0.15)] bg-slate-950 relative">
+              <iframe
+                src="https://www.youtube.com/embed/Bg0ji6344pk"
+                title="Trade Alpha Zone Student Feedback"
+                className="w-full h-full object-cover"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                style={{ border: 0 }}
+              ></iframe>
+            </div>
+          </div>
+
+          {/* RIGHT SIDE: English Feedback Content */}
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div className="flex items-center justify-center lg:justify-start gap-2.5">
+              <div className="p-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                <MessageSquare size={14} />
+              </div>
+              <span className="text-emerald-400 font-bold tracking-widest text-[9px] uppercase">Verified Student Review</span>
+            </div>
+            
+            <h2 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter leading-none text-white">
+              REAL RESULTS FROM <br />
+              OUR PHYSICAL <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">TRADING FLOORS.</span>
+            </h2>
+            
+            <p className="text-zinc-400 text-sm leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
+              Listen directly to the real success stories from our active community members. At Trade Alpha Zone, we move past passive learning; our students trade live on-floor, analyzing institutional order flow and algorithmic price movements in real-time. Watch how raw potential is molded into a structured, highly disciplined execution framework.
+            </p>
+
+            <div className="pt-4 flex flex-wrap justify-center lg:justify-start gap-4">
+              <div className="px-4 py-2 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                <span className="text-[10px] font-bold text-zinc-300 uppercase tracking-wider">Live Desk Environment</span>
+              </div>
+              <div className="px-4 py-2 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                <span className="text-[10px] font-bold text-zinc-300 uppercase tracking-wider">Verified Account Metrics</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

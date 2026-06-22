@@ -18,12 +18,12 @@ const EmbedYoutubeHub = () => {
     {
       id: "h7RcqwRl9tM",
       embedUrl: "https://www.youtube.com/embed/h7RcqwRl9tM?autoplay=1&si=3LI-P5KYRuJA9HT5",
-      title: "Forex Trading for Beginners | The Ultimate Guide to Mastering Forex"
+      title: "Trading academy for Beginners | The Ultimate Guide to Mastering Trading"
     },
     {
       id: "wWkCmtSSlVM",
       embedUrl: "https://www.youtube.com/embed/wWkCmtSSlVM?autoplay=1&si=JGTadl-O9rL_MWpj",
-      title: "Gold | Oil Weekly Analysis | 18 May - 22 May 2026 | Forex Trading"
+      title: "Gold | Oil Weekly Analysis | 18 May - 22 May 2026 | Trading Academy"
     }
   ]);
 
