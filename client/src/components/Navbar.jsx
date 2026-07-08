@@ -65,7 +65,7 @@ const Navbar = () => {
                 <h1 className="text-xs md:text-base font-black tracking-[0.2em] text-white leading-none">
                   TRADE ALPHA <span className="text-blue-400">ZONE</span>
                 </h1>
-                <span className="text-[7px] tracking-[0.35em] text-zinc-500 uppercase mt-1 font-semibold">Trading Academy</span>
+                <span className="text-[7px] tracking-[0.35em] text-zinc-500 uppercase mt-1 font-semibold">• ELITE TRADING COMMUNITY</span>
               </div>
             </motion.div>
 
