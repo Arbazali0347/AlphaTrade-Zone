@@ -21,6 +21,14 @@ const ContactPage = () => {
 
   const campuses = [
     {
+      id: "shahrah-e-faisal",
+      name: "SHAHRAH FAISAL CAMPUS",
+      type: "Headquarters & Trading Floor",
+      address: "SHAH FAISAL CAMPUS",
+      city: "Karachi,, Pakistan",
+      embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57912.403456821805!2d67.15734245000002!3d24.880060399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb3398c21ee360d%3A0x6114a9b297d321eb!2sShah%20Faisal%20Town%2C%20Pakistan!5e0!3m2!1sen!2s!4v1782922599393!5m2!1sen!2s",
+    },
+    {
       id: "model-colony",
       name: "MODEL COLONY CAMPUS",
       type: "Linguaphile Academia Desk",

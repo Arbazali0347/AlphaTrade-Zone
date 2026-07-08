@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import { FaWhatsapp, FaYoutube, FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaWhatsapp, FaYoutube, FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa';
 import logo from "/logo.png";
 import { Link } from 'react-router-dom';
 
@@ -93,6 +93,16 @@ const Footer = () => {
                   className="w-9 h-9 rounded-xl bg-[#070f2e]/60 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-[#E4405F] hover:border-[#E4405F]/40 hover:bg-[#E4405F]/5 transition-all shadow-md"
                 >
                   <FaInstagram size={16} />
+                </a>
+
+                {/* 5. TikTok Handles Link */}
+                <a 
+                  href="https://www.tiktok.com/@trade_alpha_zone" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl bg-[#070f2e]/60 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-[#000] hover:border-[#000]/40 hover:bg-[#000]/5 transition-all shadow-md"
+                >
+                  <FaTiktok size={16} />
                 </a>
               </div>
             </div>

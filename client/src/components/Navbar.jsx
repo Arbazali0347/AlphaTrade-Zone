@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, Cpu, GraduationCap } from 'lucide-react';
-import { Link, useNavigate, useLocation } from 'react-router-dom'; // Added useLocation here
+import { Menu, X } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router-dom'; 
 import tazLogo from "/logo.png"; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Desktop hover status tracking
-  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false); // Mobile toggle status tracking
   const navigate = useNavigate();
-  const location = useLocation(); // Hook to track the active route pathname
+  const location = useLocation(); 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,32 +23,21 @@ const Navbar = () => {
     { name: 'Academy', href: '/academy' },
     { name: 'Founder', href: '/mentor' },
     { name: 'Feast', href: '/festivals' },
-    { name: 'Live Channel', href: '/live-channel' },
+    { name: 'TAZ-Youtube', href: '/youtube' },
   ];
+
+  // Direct link configured for the Software page
+  const softwareLink = { name: 'Taz-Softwares', href: '/software/autosignal-x' };
 
   const secondaryLinks = [
     { name: 'Services', href: '/services' },
     { name: 'Contact', href: '/contact' },
   ];
 
-  // Proprietary Tech Suite Links Array
-  const systemDropdownLinks = [
-    { 
-      name: 'Trade Auto Signal X', 
-      href: '/software/autosignal-x', 
-      desc: 'Automated Signal System',
-      icon: <Cpu size={14} className="text-emerald-400" /> 
-    },
-  ];
-
-  // Filter out the active route from arrays so it hides automatically
+  // Filter out the active routes
   const visibleNavLinks = navLinks.filter(link => location.pathname !== link.href);
+  const isSoftwareVisible = location.pathname !== softwareLink.href;
   const visibleSecondaryLinks = secondaryLinks.filter(link => location.pathname !== link.href);
-  const visibleDropdownLinks = systemDropdownLinks.filter(link => location.pathname !== link.href);
-
-  // Quick check if the entire Systems dropdown category should be visible
-  // It will hide only if all its inner links or sublinks are not currently active
-  const isSystemsDropdownVisible = visibleDropdownLinks.length > 0;
 
   return (
     <>
@@ -94,55 +81,14 @@ const Navbar = () => {
                 </Link>
               ))}
 
-              {/* SYSTEMS DROPDOWN TRIGGER (Desktop Hover Mode) */}
-              {isSystemsDropdownVisible && (
-                <div 
-                  className="relative py-4"
-                  onMouseEnter={() => setIsDropdownOpen(true)}
-                  onMouseLeave={() => setIsDropdownOpen(false)}
+              {/* TAZ SOFTWARE DIRECT LINK (No dropdown, no hover, pure click) */}
+              {isSoftwareVisible && (
+                <Link
+                  to={softwareLink.href}
+                  className="px-4 py-2 text-[10px] lg:text-[11px] uppercase tracking-[0.2em] font-bold text-zinc-400 hover:text-white transition-colors"
                 >
-                  <button className="px-4 py-2 text-[10px] lg:text-[11px] uppercase tracking-[0.2em] font-bold text-zinc-400 hover:text-white transition-colors flex items-center gap-1">
-                    Systems
-                    <motion.span animate={{ rotate: isDropdownOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
-                      <ChevronDown size={12} className="text-zinc-500" />
-                    </motion.span>
-                  </button>
-
-                  {/* Dropdown Menu Container */}
-                  <AnimatePresence>
-                    {isDropdownOpen && (
-                      <motion.div 
-                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-[#0a0f24] border border-white/10 rounded-2xl p-3 shadow-[0_20px_40px_rgba(0,0,0,0.6)] backdrop-blur-lg"
-                      >
-                        <div className="flex flex-col gap-1">
-                          {visibleDropdownLinks.map((subLink) => (
-                            <Link
-                              key={subLink.name}
-                              to={subLink.href}
-                              className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.03] transition-colors group text-left"
-                            >
-                              <div className="mt-0.5 p-1.5 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-white/10 transition-colors">
-                                {subLink.icon}
-                              </div>
-                              <div className="flex flex-col">
-                                <span className="text-[11px] font-black tracking-wide text-zinc-200 group-hover:text-white transition-colors">
-                                  {subLink.name}
-                                </span>
-                                <span className="text-[9px] font-medium text-zinc-500 mt-0.5">
-                                  {subLink.desc}
-                                </span>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                  {softwareLink.name}
+                </Link>
               )}
 
               {visibleSecondaryLinks.map((link) => (
@@ -188,45 +134,15 @@ const Navbar = () => {
                   </Link>
                 ))}
 
-                {/* SYSTEMS ACCORDION TOGGLE (Mobile Dynamic Optimization) */}
-                {isSystemsDropdownVisible && (
-                  <div className="flex flex-col border-b border-white/[0.02] py-1">
-                    <button 
-                      onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
-                      className="w-full flex justify-between items-center text-[11px] font-black text-zinc-400 uppercase tracking-[0.15em] py-2.5 text-left"
-                    >
-                      <span>Systems</span>
-                      <motion.span animate={{ rotate: isMobileDropdownOpen ? 180 : 0 }}>
-                        <ChevronDown size={14} className="text-zinc-500" />
-                      </motion.span>
-                    </button>
-
-                    <AnimatePresence>
-                      {isMobileDropdownOpen && (
-                        <motion.div 
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
-                          exit={{ opacity: 0, height: 0 }}
-                          className="pl-4 flex flex-col gap-1 bg-white/[0.01] rounded-xl overflow-hidden"
-                        >
-                          {visibleDropdownLinks.map((subLink) => (
-                            <Link
-                              key={subLink.name}
-                              to={subLink.href}
-                              className="flex items-center gap-3 py-3 text-[11px] font-bold text-zinc-300 hover:text-white uppercase tracking-wider"
-                              onClick={() => {
-                                setIsOpen(false);
-                                setIsMobileDropdownOpen(false);
-                              }}
-                            >
-                              <div className="p-1 rounded bg-white/5">{subLink.icon}</div>
-                              {subLink.name}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
+                {/* TAZ SOFTWARE DIRECT LINK FOR MOBILE */}
+                {isSoftwareVisible && (
+                  <Link
+                    to={softwareLink.href}
+                    className="text-[11px] font-black text-zinc-400 hover:text-blue-500 uppercase tracking-[0.15em] py-2.5 border-b border-white/[0.02]"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {softwareLink.name}
+                  </Link>
                 )}
 
                 {visibleSecondaryLinks.map((link) => (
@@ -240,7 +156,6 @@ const Navbar = () => {
                   </Link>
                 ))}
 
-                {/* Hide the Call to Action button only if user is already on the contact page */}
                 {location.pathname !== "/contact" && (
                   <button 
                     onClick={() => { 

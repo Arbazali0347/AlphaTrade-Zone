@@ -1,6 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Monitor, Users, GraduationCap, ArrowUpRight, BarChart3, Clock, MessageSquare } from 'lucide-react';
+import { ShieldCheck, Monitor, Users, GraduationCap, ArrowUpRight, BarChart3, Clock, MessageSquare, MapPin } from 'lucide-react';
+
+// Imported assets for local vertical auto-play videos (Ensure these are 9:16 portrait videos)
+import campusVid1 from '../assets/campus1.mp4';
+import campusVid2 from '../assets/campus2.mp4';
+import campusVid3 from '../assets/campus3.mp4';
 
 const AcademyPage = () => {
   const stats = [
@@ -25,6 +30,25 @@ const AcademyPage = () => {
       icon: <Users className="text-blue-400" size={24} />,
       title: "ELITE NETWORKING",
       desc: "Surround yourself with serious individuals focused on funding, market efficiency, and wealth building."
+    }
+  ];
+
+  // Campus Data for Vertical Auto-Play Grid
+  const campuses = [
+    {
+      videoSrc: campusVid1,
+      locationName: "SHAH FAISAL CAMPUS",
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=S.R+ACADEMY+Shah+Faisal+Campus"
+    },
+    {
+      videoSrc: campusVid3,
+      locationName: "LIAQUAT ALI KHAN RD CAMPUS",
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=Liaquat+Ali+Khan+Rd,+Model+Colony+Block+10+Model+Colony"
+    },
+    {
+      videoSrc: campusVid2,
+      locationName: "W622+HF8, Indus Mehran",
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=W622%2BHF8,+Indus+Mehran"
     }
   ];
 
@@ -69,6 +93,51 @@ const AcademyPage = () => {
               Trade Alpha Zone is not a casual coaching center. We operate structured physical ecosystems in Pakistan built to transform raw talent into disciplined market executors.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* --- NEW SECTION: 3 VERTICAL (TIKTOK SIZE) AUTO-PLAY VIDEOS --- */}
+      <section className="py-12 px-6 max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {campuses.map((campus, index) => (
+            <div key={index} className="bg-[#0a1120]/20 border border-white/5 rounded-[2rem] p-5 flex flex-col justify-between space-y-5 hover:border-blue-500/20 transition-all duration-300 backdrop-blur-sm">
+              
+              {/* TikTok Size (9:16) Vertical Video Wrapper */}
+              <div className="w-full aspect-[9/16] rounded-[1.5rem] overflow-hidden bg-slate-950 border border-white/5 relative shadow-inner">
+                <video 
+                  src={campus.videoSrc}
+                  className="w-full h-full object-cover"
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                />
+                <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-[9px] font-mono tracking-widest text-blue-400 px-2.5 py-1 rounded-md uppercase border border-white/10">
+                  Live Feed 0{index + 1}
+                </div>
+              </div>
+
+              {/* Institute & Clickable Location Info */}
+              <div className="space-y-2 px-1">
+                <p className="text-blue-500 font-black tracking-widest text-[10px] uppercase">
+                  {campus.institute}
+                </p>
+                
+                <a 
+                  href={campus.mapUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-2 text-zinc-300 hover:text-cyan-400 transition-colors duration-200"
+                >
+                  <MapPin size={14} className="text-zinc-500 group-hover:text-cyan-400 mt-0.5 shrink-0 transition-colors" />
+                  <span className="text-xs font-semibold leading-snug tracking-tight">
+                    {campus.locationName}
+                  </span>
+                </a>
+              </div>
+
+            </div>
+          ))}
         </div>
       </section>
 

@@ -24,9 +24,12 @@ import Hamza_image_1 from "../assets/hamza-1.jpeg"
 import Hamza_image_2 from "../assets/hamza-4.jpeg"
 import image_1 from "../assets/services-1.png";
 import image_2 from "../assets/services-2.png";
+import { useNavigate } from 'react-router-dom';
 
 const ServicesPage = () => {
   // Navigation trigger to contact
+
+  const navigate = useNavigate()
   const handleEnrollRedirect = () => {
     const contactSection = document.getElementById('contact-section');
     if (contactSection) {
@@ -38,6 +41,7 @@ const ServicesPage = () => {
   const mainEcosystemServices = [
     {
       icon: <FaChartLine size={22} />,
+      link: "/academy",
       title: "Professional Trading Training",
       subtitle: "Master the Markets",
       desc: "Advance technical patterns, liquidity sweeps, aur pure price action trading mechanics.",
@@ -45,6 +49,7 @@ const ServicesPage = () => {
     },
     {
       icon: <FaChalkboardTeacher size={22} />,
+      link: "/mentor",
       title: "Expert Mentorship",
       subtitle: "Learn from Pros",
       desc: "Live market streaming sessions aur professional trading community ka direct access.",
@@ -52,6 +57,7 @@ const ServicesPage = () => {
     },
     {
       icon: <FaBookOpen size={22} />,
+      link: "/academy",
       title: "Practical Learning",
       subtitle: "Real Market Setup",
       desc: "Simulation tracking aur functional real-time dynamic dashboard integration.",
@@ -59,6 +65,7 @@ const ServicesPage = () => {
     },
     {
       icon: <FaBriefcase className="text-blue-500" size={22} />,
+      link: "/software/autosignal-x",
       title: "TAZ Softwares",
       subtitle: "Taz Software",
       desc: "Taz Cadet & Taz Cadet Pro - Professional trading software suite for market analysis and execution.",
@@ -134,6 +141,7 @@ const ServicesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
+                onClick={()=> navigate(service.link)}
                 className="group bg-[#040d21]/40 border border-white/5 rounded-2xl p-4 flex flex-col justify-between h-full hover:border-blue-500/20 transition-all shadow-xl"
               >
                 {/* Visual Image Asset */}
@@ -169,6 +177,34 @@ const ServicesPage = () => {
             ))}
           </div>
         </div>
+
+        <div className="flex flex-col md:flex-row md:items-center gap-4 justify-between border-b border-white/5 pb-4">
+          <h2 className="text-2xl font-black uppercase italic tracking-tighter">OUR SOFTWARES</h2>
+          <p className="text-[9px] font-black text-blue-500 uppercase tracking-widest">AUTOSIGNALX INTEGRATED PLATFORMS</p>
+        </div>
+        <section className="bg-[#03081a]/60 border border-white/5 rounded-3xl p-6 md:p-8 space-y-4 shadow-2xl">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/5 pb-4 gap-2">
+            <div>
+              <h3 className="text-xs font-black tracking-[0.15em] text-emerald-400 uppercase">AUTOSIGNALX INTEGRATED PLATFORMS</h3>
+              <p className="text-zinc-500 text-[11px] font-medium">Click on any underlying execution element to anchor scroll directly to its architecture window.</p>
+            </div>
+            <span className="text-[9px] font-mono font-bold text-zinc-400 bg-white/5 border border-white/10 px-3 py-1 rounded-md h-fit w-fit">
+              Nodes Operational: 02
+            </span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a onClick={()=> navigate("/software/autosignal-x")} className="group p-5 rounded-2xl bg-amber-500/[0.01] border border-amber-500/10 hover:border-amber-500/30 transition-all flex items-center justify-between">
+              <div className="space-y-1">
+                <h4 className="text-base font-black uppercase tracking-tight text-white group-hover:text-amber-400 transition-colors whitespace-pre">TAZ  Cadet  v1.30</h4>
+              </div>
+            </a>
+            <a onClick={()=> navigate("/software/autosignal-x")} className="group p-5 rounded-2xl bg-purple-500/[0.01] border border-purple-500/10 hover:border-purple-500/30 transition-all flex items-center justify-between">
+              <div className="space-y-1">
+                <h4 className="text-base font-black uppercase tracking-tight text-white group-hover:text-purple-400 transition-colors whitespace-pre">TAZ  CADET  PRO</h4>
+              </div>
+            </a>
+          </div>
+        </section>
 
         {/* --- SECTION 3: FLAGSHIP CURRICULUM (Existing Bento Grid) --- */}
         <div className="space-y-12">

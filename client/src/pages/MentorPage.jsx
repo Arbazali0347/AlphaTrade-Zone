@@ -3,16 +3,15 @@ import { motion } from 'framer-motion';
 import { Award, Users, Camera, Play, Shield, Activity } from 'lucide-react';
 import logo from "/logo.png";
 import Hamza_image_1 from "../assets/hamza-1.jpg"
-import Hamza_image_2 from "../assets/hamza-2.jpg"
+import Hamza_image_2 from "../assets/hamza-2.jpeg"
 import Hamza_image_3 from "../assets/hamza-3.jpg"
-import Hamza_image_4 from "../assets/hamza-4.jpg"
+import Hamza_image_4 from "../assets/hamza-3.jpeg"
 import team from "../assets/team.jpg"
 import team_1 from "../assets/team-1.jpg"
-import tahir from "../assets/hamza-tahir.jpg"
+import tahir from "../assets/cake.jpg"
 import mentorVideo from "../assets/mentorEntry.mp4";
 
 const MentorPage = () => {
-  
   // Hamza Kayani's 4 Showcase Images
   const hamzaGallery = [
     { id: 1, image: Hamza_image_1},
@@ -24,12 +23,11 @@ const MentorPage = () => {
   // Core Team Section Data
   const coreTeam = [
     {
-      name: "Tahir Ali",
-      role: "Co-Founder",
+      name: "TAZ Team",
       image: tahir,
     },
     {
-      name: "Hamza Kayani",
+      name: "Team Members",
       role: "Head Mentor",
       image: team
     },
@@ -53,7 +51,7 @@ const MentorPage = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/[0.04] pb-8">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img 
+              <img
                 src={logo} 
                 className="h-9 w-auto filter drop-shadow-[0_0_8px_rgba(37,99,235,0.3)]" 
                 alt="TAZ" 

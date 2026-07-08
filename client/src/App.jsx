@@ -16,6 +16,7 @@ import LiveChannelPage from './pages/LiveChannelPage'
 
 // Importing the newly created Festival Popup component
 import FestivalPopup from './components/FestivalPopup'
+import AlphaZoneContactForm from './components/AlphaZoneContactForm'
 
 const App = () => {
   return (
@@ -36,7 +37,8 @@ const App = () => {
         <Route path='/software/autosignal-x' element={<AutoSignalX/>}/>
         <Route path='/software/course-cadets' element={<CourseCadets/>}/>
         <Route path='/festivals' element={<FestivalsPage/>}/>
-        <Route path='/live-channel' element={<LiveChannelPage/>}/>
+        <Route path='/youtube' element={<LiveChannelPage/>}/>
+        <Route path='/join' element={<AlphaZoneContactForm/>}/>
       </Routes>
       
       <Footer/>
