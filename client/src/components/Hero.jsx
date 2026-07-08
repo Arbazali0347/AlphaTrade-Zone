@@ -174,33 +174,6 @@ const NewHero = () => {
         </div>
       </div>
 
-      {/* ── BOTTOM HORIZONTAL BAR: CORE BRAND STATS/VALUES ── */}
-      <motion.div 
-        initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="w-full max-w-7xl mx-auto z-10 pt-6 mt-12 border-t border-zinc-900 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-5 gap-x-3 text-left"
-      >
-        {STATS_ITEMS.map((item, index) => {
-          const Icon = item.icon;
-          return (
-            <div key={index} className="flex items-start gap-2.5 px-1.5">
-              <div className="text-blue-500 p-1.5 bg-blue-500/5 rounded-md mt-0.5 shrink-0">
-                <Icon size={15} />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-zinc-100 font-extrabold text-xs tracking-wide leading-tight">
-                  {item.title}
-                </span>
-                <span className="text-zinc-500 text-[10px] sm:text-[11px] font-medium leading-snug mt-1">
-                  {item.desc}
-                </span>
-              </div>
-            </div>
-          );
-        })}
-      </motion.div>
-
     </section>
   );
 };
