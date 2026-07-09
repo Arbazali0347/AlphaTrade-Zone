@@ -1,11 +1,11 @@
 import React from 'react';
-import { CheckSquare, ArrowRight, Globe, MapPin, ShieldAlert } from 'lucide-react';
+import { CheckSquare, ArrowRight, Globe, ShieldAlert } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import teach from '../assets/teacher-screen-bg.jpeg'; // Local image for the Trading Academy card
 
 const SERVICES = [
   {
-    title: "TRADING ACADEMY",
+    title: "JOIN TRADING ACADEMY",
     subtitle: "From Basics to Advanced",
     bgImage: teach,
     points: [
@@ -15,11 +15,10 @@ const SERVICES = [
       "Risk Management",
       "Live Classes & Workshops"
     ],
-    btnText: "EXPLORE ACADEMY",
-    link: "/academy"
+    link: "/join"
   },
   {
-    title: "TRADING SIGNALS",
+    title: "GET TRADING SIGNALS",
     subtitle: "Live Trade Guidance",
     bgImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop",
     points: [
@@ -29,8 +28,7 @@ const SERVICES = [
       "Multi-Timeframe Context",
       "Real-Time Updates"
     ],
-    btnText: "VIEW SIGNALS",
-    link: "/signals/autosignal-x"
+    link: "/software/autosignal-x"
   },
   {
     title: "ENTRY - TARGETS BY SOFTWARES",
@@ -43,7 +41,6 @@ const SERVICES = [
       "Trade Management",
       "Performance Tracking"
     ],
-    btnText: "EXPLORE SOFTWARES",
     link: "/software/autosignal-x"
   },
   {
@@ -57,7 +54,6 @@ const SERVICES = [
       "Account Types Guidance",
       "Ongoing Infrastructure Support"
     ],
-    btnText: "FIND YOUR PLATFORM",
     link: "/academy"
   }
 ];
@@ -88,19 +84,31 @@ const FeaturesGrid = () => {
                 }}
               />
 
-              {/* Card Content Top Area */}
-              <div className="relative z-10 space-y-4">
-                <div>
-                  <h3 className="text-blue-500 font-extrabold text-xs tracking-wider uppercase">
-                    {service.title}
-                  </h3>
-                  <p className="text-zinc-300 font-semibold text-[13px] mt-0.5">
-                    {service.subtitle}
-                  </p>
+              {/* Card Content Area */}
+              <div className="relative z-10 space-y-5 w-full">
+                
+                {/* ── PREMIUM SOLID BLUE CAPSULE BUTTON ── */}
+                <div 
+                  onClick={() => navigate(service.link)}
+                  className="flex items-center justify-between p-3 px-4 bg-[#1d5eff] hover:bg-blue-600 rounded-2xl cursor-pointer transition-all duration-200 shadow-[0_4px_15px_rgba(29,94,255,0.25)] select-none"
+                >
+                  <div className="flex flex-col text-left space-y-0.5 min-w-0">
+                    <h4 className="font-black text-[9px] sm:text-[10px] uppercase tracking-wider text-white truncate">
+                      {service.title}
+                    </h4>
+                    <p className="text-[8px] sm:text-[9px] text-blue-100 font-medium opacity-95 truncate">
+                      {service.subtitle}
+                    </p>
+                  </div>
+                  
+                  {/* Small Action Arrow */}
+                  <div className="text-white opacity-95 shrink-0 ml-2">
+                    <ArrowRight size={12} strokeWidth={2.5} />
+                  </div>
                 </div>
 
                 {/* Point Lists with custom lucide icons */}
-                <ul className="space-y-2 pt-2">
+                <ul className="space-y-2 pt-1">
                   {service.points.map((point, ptIdx) => (
                     <li key={ptIdx} className="flex items-center gap-2.5 text-zinc-400 text-xs">
                       <CheckSquare size={13} className="text-blue-500 shrink-0 opacity-85" />
@@ -110,16 +118,6 @@ const FeaturesGrid = () => {
                 </ul>
               </div>
 
-              {/* Action Button Pinned to Bottom */}
-              <div className="relative z-10 pt-6">
-                <button
-                  onClick={() => navigate(service.link)}
-                  className="inline-flex items-center gap-2 text-[10px] font-black tracking-widest text-blue-400 border border-blue-500/20 bg-blue-500/5 px-4 py-2 rounded-md hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-200 uppercase w-full sm:w-auto"
-                >
-                  {service.btnText}
-                  <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
-                </button>
-              </div>
             </div>
           ))}
         </div>
@@ -133,12 +131,6 @@ const FeaturesGrid = () => {
             <span className="tracking-wide">
               Trade Alpha Zone - Trading Education, Signals, Software & Partner Platforms
             </span>
-          </div>
-
-          {/* Geo Location Meta */}
-          <div className="flex items-center gap-2 text-zinc-400">
-            <MapPin size={14} className="text-zinc-600 shrink-0" />
-            <span>Karachi, Pakistan</span>
           </div>
 
           {/* Legal/Risk Disclaimer Warning */}
